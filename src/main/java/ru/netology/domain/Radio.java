@@ -12,9 +12,6 @@ public class Radio {
     }
 
     public Radio(int currentNumberStation) {
-        if (currentNumberStation <= 0) {
-            throw  new IllegalArgumentException("Arg stations should be positive");
-        }
         this.maxStation = currentNumberStation - 1;
     }
 
