@@ -6,7 +6,17 @@ public class Radio {
     private int minStation = 0;
     private int maxStation = 9;
     private int minVolume = 0;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
+
+    public Radio() {
+    }
+
+    public Radio(int currentNumberStation) {
+        if (currentNumberStation <= 0) {
+            throw  new IllegalArgumentException("Arg stations should be positive");
+        }
+        this.maxStation = currentNumberStation - 1;
+    }
 
     public int getCurrentNumberStation() {
         return currentNumberStation;
