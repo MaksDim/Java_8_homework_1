@@ -62,10 +62,10 @@ public class RadioTest {
     public void PlusVolumeAfterMax() {
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.setPlusVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         assertEquals(expected, actual);
@@ -126,6 +126,19 @@ public class RadioTest {
     @Test
     public void EnterStationAfterMin() {
         Radio radio = new Radio();
+
+
+        radio.setCurrentNumberStation(-5);
+
+        int expected = 0;
+        int actual = radio.getCurrentNumberStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCreateRadioWithStationCount() {
+        Radio radio = new Radio(5);
 
 
         radio.setCurrentNumberStation(-5);
